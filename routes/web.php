@@ -34,4 +34,4 @@ Route::group(['middleware' => 'auth'], function() {
 
 });
 
-
+// ini komentar
