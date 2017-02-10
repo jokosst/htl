@@ -19,6 +19,8 @@ Route::get('bk', 'ProdukController@bkcon');
 Route::group(['middleware' => 'auth'], function() {
 
 	Route::get('/admin/index','ProdukController@admin');
+	Route::get('/admin/menu','MenuController@menu');
+	Route::get('/admin/submenu','SubmenuController@submenu');
 	Route::get('/admin','ProdukController@admin');
 	Route::get('/admin/tambah', function () {
 	    return view('admin/tambah_produk');

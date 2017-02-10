@@ -21,8 +21,16 @@
           </a>
         </li>
         <li>
-          <a href="{{URL::to('/admin/katagori')}}">
-            <i class="fa fa-phone-square"></i> <span>Kategori</span>
+          <a href="{{URL::to('/admin/menu')}}">
+            <i class="fa fa-bars"></i> <span>Menu</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+          <a href="{{URL::to('/admin/submenu')}}">
+            <i class="fa  fa-list-ul"></i> <span>Sub Menu</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>
             </span>
