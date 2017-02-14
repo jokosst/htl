@@ -1,7 +1,7 @@
-@include('admin.header')
+@include('kontributor.header')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-     @include('admin.sidebar')
+     @include('kontributor.sidebar')
     <!-- /.sidebar -->
   </aside>
 
@@ -10,9 +10,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Semua Menu</small>
+        <small>Semua Produk Hukum</small>
       </h1>
-      <a href="{{URL::to('/admin/tambahmenu')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Menu</a>
+      
     </section>
 
     <!-- Main content -->
@@ -28,30 +28,28 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>NAMA MENU</th>
+                  <th>NOMOR</th>
+                  <th>TENTANG</th>
+                  <th>KATAGORI</th>
+                  <th>MASALAH</th>
                   <th>AKSI</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($data as $dview)
+                <!-- @foreach($data as $dview)
                 <tr>
-                  <td>{{ $dview-> nama_menu}}</td>
+                  <td>{{ $dview-> nomor}}</td>
+                  <td>{{ $dview-> tentang}}</td>
+                  <td>{{ $dview-> katagori}}</td>
+                  <td>{{ $dview-> masalah}}</td>
                   <td class="center">
-                  <a href="editmenu/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="hapusmenu/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="admin/lihat/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="#"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="admin/edit/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="admin/hapus/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
-                @endforeach
+                @endforeach -->
                 
-                <script>
-                  function confirmSubmit()
-                    {
-                        var agree=confirm("Apakah anda yakin akan menghapus Menu ini?");
-                        if (agree)
-                            return true ;
-                        else
-                            return false ;
-                    }
-                </script>
                 </tbody>
               </table>
             </div>
@@ -67,4 +65,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('admin.footer')
+  @include('kontributor.footer')

@@ -12,7 +12,7 @@
       <h1>
         <small>Semua Sub-Menu</small>
       </h1>
-      
+       <a href="{{URL::to('/admin/tambahsubmenu')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah SubMenu</a>
     </section>
 
     <!-- Main content -->
@@ -37,11 +37,21 @@
                 <tr>
                   <td>{{ $dview-> nama_submenu}}</td>
                   <td class="center">
-                  <a href="admin/editsubmenu/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="admin/hapussubmenu/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="editsubmenu/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="hapussubmenu/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
                 @endforeach
-                
+
+                 <script>
+                  function confirmSubmit()
+                    {
+                        var agree=confirm("Apakah anda yakin akan menghapus SubMenu ini?");
+                        if (agree)
+                            return true ;
+                        else
+                            return false ;
+                    }
+                </script>
                 </tbody>
               </table>
             </div>

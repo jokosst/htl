@@ -8,14 +8,27 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
 use Storage;
 use App\Produk;
+use App\Submenu;
+use App\Menu;
+
+
 
 class ProdukController extends Controller
 {
   //user
     public function index(){
-      $d = Produk::all(); //eloquent view semua data
-      $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get(); //query bulider ngelihat data dari katagori
-      return view('welcome',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum]);
+      $kategoris = Menu::all()->load('Submenu'); //menu submenu dinamis
+      $d = Produk::all();
+      $m = DB::table('sub_menu')->select('nama_submenu')->get();
+      
+      return view('welcome', compact('kategoris'),['data' =>$d, 'pilih' =>$m ]);
+
+      
+      // $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get();
+      //  $katagori = DB::table('sub_menu')->select('nama_submenu')->get();
+      // return view('welcome',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum, 'kat'=>$katagori]);
+
+      
     }
     public function bkcon(){
       $d = Produk::all(); //eloquent view semua data
@@ -29,14 +42,14 @@ class ProdukController extends Controller
     }
      public function katagori(Request $request,$katagori){
         $d = DB::table('produk_hukum')->where('katagori',$katagori)->get();
-        $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get();
+         $kategoris = Menu::all()->load('Submenu');
    // dd($d);
-    return view('produk_hukum',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum]);
+    return view('produk_hukum', compact('kategoris'), ['data' =>$d]);
     }
     public function lihatproduk(Request $request,$id){
      $d = Produk::find($id);
-     $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get();
-     return view('lihat',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum]);
+     $kategoris = Menu::all()->load('Submenu');
+     return view('lihat', compact('kategoris'), ['data' =>$d]);
     }
 public function downloadproduk(Request $request,$dokumen)
     {
@@ -76,6 +89,7 @@ public function downloadproduk(Request $request,$dokumen)
       $d = Produk::all();
       return view('admin/index',['data' =>$d]);
     }
+    
     public function tambah(Request $request){
       $file = $request->file('dokumen');
        $extension = $file->getClientOriginalExtension();

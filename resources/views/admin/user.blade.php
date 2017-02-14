@@ -10,9 +10,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Semua Menu</small>
+        <small>Semua User</small>
       </h1>
-      <a href="{{URL::to('/admin/tambahmenu')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Menu</a>
+      <a href="{{URL::to('/admin/tambahuser')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah User</a>
     </section>
 
     <!-- Main content -->
@@ -28,24 +28,26 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>NAMA MENU</th>
+                <th>SEBAGAI</th>
+                  <th>USERNAME</th>
                   <th>AKSI</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($data as $dview)
                 <tr>
-                  <td>{{ $dview-> nama_menu}}</td>
+                <td>{{ $dview-> sebagai}}</td>
+                <td>{{ $dview-> username}}</td>
                   <td class="center">
-                  <a href="editmenu/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="hapusmenu/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="edituser/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="hapususer/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
                 @endforeach
                 
                 <script>
                   function confirmSubmit()
                     {
-                        var agree=confirm("Apakah anda yakin akan menghapus Menu ini?");
+                        var agree=confirm("Apakah anda yakin akan menghapus User ini?");
                         if (agree)
                             return true ;
                         else

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use App\kontak;
+use App\Submenu;
+use App\Menu;
 
 class KontakController extends Controller
 {
@@ -15,7 +17,8 @@ class KontakController extends Controller
 	}
 	public function userkontak(){
 		 $d= kontak::find('1');
-		  $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get(); return view('kontak',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum]);
+		  $kategoris = Menu::all()->load('Submenu');
+		  return view('kontak', compact('kategoris'), ['data' =>$d]);
 	}
 	public function editkontak(Request $request){
      $tambah = kontak::find(1);

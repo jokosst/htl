@@ -37,6 +37,14 @@
           </a>
         </li>
         <li>
+          <a href="{{URL::to('/admin/user')}}">
+            <i class="fa  fa-user"></i> <span>User</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"></small>
+            </span>
+          </a>
+        </li>
+        <li>
           <a href="{{URL::to('/admin/kontak')}}">
             <i class="fa fa-phone-square"></i> <span>Kontak</span>
             <span class="pull-right-container">

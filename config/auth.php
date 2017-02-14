@@ -45,6 +45,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'kontributors' => [
+            'driver' => 'token',
+            'provider' => 'kontributors',
+        ],
     ],
 
     /*
@@ -68,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'kontributors' => [
+            'driver' => 'eloquent',
+            'model' => App\Kontributor::class,
         ],
 
         // 'users' => [

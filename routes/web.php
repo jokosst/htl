@@ -17,22 +17,65 @@ Route::get('bk', 'ProdukController@bkcon');
 
 
 Route::group(['middleware' => 'auth'], function() {
+Route::get('home', function () {
+	    return view('home');
+	});
+Route::get('/admin/keluar','logincontroller@logout');
 
-	Route::get('/admin/index','ProdukController@admin');
+//middleware admin
+Route::group(['middleware' => 'admin'], function() {
+    Route::get('/admin/index','ProdukController@admin');
 	Route::get('/admin/menu','MenuController@menu');
 	Route::get('/admin/submenu','SubmenuController@submenu');
 	Route::get('/admin','ProdukController@admin');
-	Route::get('/admin/tambah', function () {
-	    return view('admin/tambah_produk');
+	Route::get('/admin/user','AdminController@user');
+	//tambah
+	Route::get('/admin/tambah','SubmenuController@submenuindex');
+	Route::get('/admin/tambahmenu', function () {
+	    return view('admin/tambah_menu');
 	});
+	Route::get('/admin/tambahuser', function () {
+	    return view('admin/tambah_user');
+	});
+	Route::get('/admin/tambahsubmenu','MenuController@tambahsubmenu');
 	Route::post('/admin/create','ProdukController@tambah');
+	Route::post('/admin/createmenu','MenuController@create');
+	Route::post('/admin/createsubmenu','SubmenuController@create');
+	Route::post('/admin/createuser','AdminController@create');
+
+//lihat
 	Route::get('/admin/lihat/{id}','ProdukController@view');
+
+	//edit
 	Route::get('/admin/edit/{id}','ProdukController@edit');
+	Route::get('/admin/editmenu/{id}','MenuController@edit');
+	Route::get('/admin/editsubmenu/{id}','SubmenuController@edit');
+	Route::get('/admin/edituser/{id}','AdminController@edit');
+
+//update
 	Route::post('/admin/update/{id}','ProdukController@update');
+	Route::post('/admin/updatemenu/{id}','MenuController@update');
+	Route::post('/admin/updatesubmenu/{id}','SubmenuController@update');
+	Route::post('/admin/updateuser/{id}','AdminController@update');
+	
+	//hapus
 	Route::get('/admin/hapus/{id}','ProdukController@hapus');
-	Route::get('/admin/keluar','logincontroller@logout');
+	Route::get('/admin/hapusmenu/{id}','MenuController@hapus');
+	Route::get('/admin/hapussubmenu/{id}','SubmenuController@hapus');
+	Route::get('/admin/hapususer/{id}','AdminController@hapus');
+
+	
 	Route::get('/admin/kontak','KontakController@kontak');
 	Route::post('/admin/editkontak','KontakController@editkontak');
+});
+
+//middleware kontributor
+Route::group(['middleware' => 'kontributor'], function() {
+
+			Route::get('kontributor', function () {
+				    return "halaman kontrib";
+				});
+});
 
 });
 

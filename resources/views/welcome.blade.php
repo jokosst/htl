@@ -59,11 +59,22 @@
                     <div class="select-wrapper">
   <select name="textcari" id="txtcari" onchange="cari()">
 <option value="0">Semua Tahun</option>
+<option value="2016">2005</option>
+<option value="2016">2006</option>
+<option value="2016">2007</option>
+<option value="2016">2008</option>
+<option value="2016">2009</option>
   <option value="2010">2010</option>
   <option value="2011">2011</option>
   <option value="2012">2012</option>
   <option value="2013">2013</option>
+  <option value="2013">2014</option>
+  <option value="2013">2015</option>
   <option value="2016">2016</option>
+  <option value="2016">2017</option>
+  <option value="2016">2018</option>
+  <option value="2016">2019</option>
+  <option value="2016">2020</option>
 </select>
 </div>
 </div>
@@ -71,8 +82,9 @@
  <div class="select-wrapper">
 <select name="katagori" id="txtkatagori" onchange="cari()">
 <option value="0">Semua Katagori</option>
-  <option value="SK Rektor">SK Rektor</option>
-  <option value="SE Rektor">SE Rektor</option>
+ @foreach($pilih as $dpilih)
+ <option value="{{ $dpilih->nama_submenu}}">{{ $dpilih->nama_submenu}}</option>
+@endforeach
 </select>
 </div>
                     </div>
@@ -85,7 +97,7 @@
                 <tr>
                   <th>NOMOR</th>
                   <th>TENTANG</th>
-                  <th>KATAGORI</th>
+                  <th>KATEGORI</th>
                   <th>PERIHAL</th>
                   <th>AKSI</th>
                 </tr>
@@ -101,6 +113,7 @@
                 </tr>
                 @endforeach
                 </tbody>
+                </tbody>
               </table>
               </div>
                   </div>
@@ -112,7 +125,7 @@
           <div id="sidebar">
             <div class="inner">
 
- @include('menu')
+@include('menu')
               
 
               <!-- Footer -->

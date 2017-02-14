@@ -39,16 +39,12 @@
                   <input type="text" name="tentang" class="form-control">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputPassword1">Katagori</label>
+                  <label for="exampleInputPassword1">Kategori</label>
                   <select name="katagori" class="form-control select2" style="width: 100%;">
                   <option value="Belum Pilih" selected="selected">-Pilih-</option>
-                  <option value="Peraturan Rektor">Peraturan Rektor</option>
-                  <option value="SK Rektor">SK Rektor</option>
-                  <option value="SE Rektor">SE Rektor</option>
-                  <option value="SOP">SOP</option>
-                  <option value="SK Dekan">SK Dekan</option>
-                  <option value="SE Dekan">SE Dekan</option>
-                  <option value="SOP Fakultas/Jur/Lab">SOP Fakultas/Jur/Lab</option>
+                   @foreach($data as $dview)
+                  <option value="{{ $dview-> nama_submenu}}">{{ $dview-> nama_submenu}}</option>
+                  @endforeach
                 </select>
                 </div>
                 <div class="form-group">
@@ -67,7 +63,7 @@
                 </select>
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputPassword1">Masalah</label>
+                  <label for="exampleInputPassword1">Perihal</label>
                   <input type="text" name="masalah" class="form-control">
                 </div>
                  <div class="form-group">
