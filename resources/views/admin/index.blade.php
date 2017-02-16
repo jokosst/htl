@@ -44,12 +44,21 @@
                   <td>{{ $dview-> masalah}}</td>
                   <td class="center">
                   <a href="admin/lihat/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="#"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="download/{{ $dview-> dokumen}}"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>&nbsp;&nbsp;&nbsp;
                   <a href="admin/edit/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="admin/hapus/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="admin/hapus/{{ $dview-> id}}"onclick="return confirmSubmit()"data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
                 @endforeach
-                
+                <script>
+                  function confirmSubmit()
+                    {
+                        var agree=confirm("Apakah anda yakin akan menghapus Data ini?");
+                        if (agree)
+                            return true ;
+                        else
+                            return false ;
+                    }
+                </script>
                 </tbody>
               </table>
             </div>

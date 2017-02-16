@@ -1,7 +1,7 @@
-@include('admin.header')
+@include('kontributor/header')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-     @include('admin.sidebar')
+     @include('kontributor/sidebar')
     <!-- /.sidebar -->
   </aside>
 
@@ -10,7 +10,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Edit Produk Hukum</small>
+        <small>Tambah Produk Hukum</small>
       </h1>
       
     </section>
@@ -26,23 +26,23 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{URL::to('admin/update')}}/{{$data->id}}" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="createkontributor" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nomor</label>
-                  <input type="text" name="nomor" value="{{$data->nomor}}" class="form-control">
+                  <input type="text" name="nomor" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
-                  <input type="text" name="tentang" value="{{$data->tentang}}" class="form-control">
+                  <input type="text" name="tentang" class="form-control">
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputPassword1">Katagori</label>
+                  <label for="exampleInputPassword1">Kategori</label>
                   <select name="katagori" class="form-control select2" style="width: 100%;">
-                  <option value="{{$data->katagori}}" selected="selected">{{$data->katagori}}</option>
-                  @foreach($ds as $dview)
+                  <option value="Belum Pilih" selected="selected">-Pilih-</option>
+                   @foreach($data as $dview)
                   <option value="{{ $dview-> nama_submenu}}">{{ $dview-> nama_submenu}}</option>
                   @endforeach
                 </select>
@@ -50,7 +50,7 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tahun</label>
                   <select name="tahun" class="form-control select2" style="width: 100%;">
-                  <option value="{{$data->tahun}}" selected="selected">{{$data->tahun}}</option>
+                  <option value="Belum Pilih" selected="selected">-Pilih-</option>
                   <option value="2010">2010</option>
                   <option value="2011">2011</option>
                   <option value="2012">2012</option>
@@ -63,12 +63,12 @@
                 </select>
                 </div>
                  <div class="form-group">
-                  <label for="exampleInputPassword1">Masalah</label>
-                  <input type="text" name="masalah" value="{{$data->masalah}}" class="form-control">
+                  <label for="exampleInputPassword1">Perihal</label>
+                  <input type="text" name="masalah" class="form-control">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">Bidang</label>
-                  <input type="text" name="bidang" value="{{$data->bidang}}" class="form-control">
+                  <input type="text" name="bidang" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File Produk</label>
@@ -92,4 +92,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('admin.footer')
+  @include('kontributor/footer')

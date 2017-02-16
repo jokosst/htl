@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Response;
+use Auth;
 use Storage;
 use App\Produk;
 use App\Submenu;
@@ -51,6 +52,8 @@ class ProdukController extends Controller
      $kategoris = Menu::all()->load('Submenu');
      return view('lihat', compact('kategoris'), ['data' =>$d]);
     }
+
+    //download
 public function downloadproduk(Request $request,$dokumen)
     {
         $entry = Produk::where('dokumen', '=', $dokumen)->firstOrFail();
@@ -116,7 +119,8 @@ public function downloadproduk(Request $request,$dokumen)
     }
     public function edit(Request $request,$id){
      $d = Produk::find($id);
-     return view('admin/edit_produk',['data' =>$d]);
+     $s = Submenu::all();
+     return view('admin/edit_produk',['data' =>$d, 'ds' =>$s]);
     }
     public function update(Request $request, $id){
       if($request->hasFile('dokumen')){
@@ -157,6 +161,85 @@ public function downloadproduk(Request $request,$dokumen)
             return redirect('/admin');
 
         
+    }
+
+//kontributor
+     public function kontributor(){
+       $iduser = Auth::user()->id;
+      // echo $iduser;
+        $d = Produk::all()->where('admin_id','=',$iduser);            
+       return view('kontributor/index',['data' =>$d]);
+    }
+     public function tambahproduk(Request $request){
+      $file = $request->file('dokumen');
+       $extension = $file->getClientOriginalExtension();
+        $filename   = md5(time().rand()).".".$file->getClientOriginalExtension();
+         Storage::disk('local')->put($filename,  File::get($file));
+        
+        $iduser = Auth::user()->id; 
+
+        $tambah = new Produk; //tambah data dengan eloquent
+        $tambah->tahun = $request->tahun;
+        $tambah->nomor = $request->nomor;
+        $tambah->tentang = $request->tentang;
+        $tambah->katagori = $request->katagori;
+        $tambah->masalah = $request->masalah;
+        $tambah->bidang = $request->bidang;
+        $tambah->dokumen = $filename;
+        $tambah->admin_id = $iduser;
+        $tambah->save();
+
+            return redirect('/kontributor');
+
+        
+    }
+    public function viewkontributor(Request $request,$id){
+     $d = Produk::find($id);
+     return view('kontributor/lihat',['data' =>$d]);
+    }
+    public function editkontributor(Request $request,$id){
+     $d = Produk::find($id);
+     $s = Submenu::all();
+     return view('kontributor/edit_produk',['data' =>$d,'ds' =>$s]);
+    }
+    public function updatekontributor(Request $request, $id){
+      if($request->hasFile('dokumen')){
+        $file = $request->file('dokumen');
+        $extension = $file->getClientOriginalExtension();
+        $filename   = md5(time().rand()).".".$file->getClientOriginalExtension();
+         Storage::disk('local')->put($filename,  File::get($file));
+
+       $tambah = Produk::find($id);
+        $tambah->tahun = $request->tahun;
+        $tambah->nomor = $request->nomor;
+        $tambah->tentang = $request->tentang;
+        $tambah->katagori = $request->katagori;
+        $tambah->masalah = $request->masalah;
+        $tambah->bidang = $request->bidang;
+        $tambah->dokumen = $filename;
+
+        $tambah->save();
+
+            return redirect('/kontributor');
+      }else{
+        $tambah = Produk::find($id);
+        $tambah->tahun = $request->tahun;
+        $tambah->nomor = $request->nomor;
+        $tambah->tentang = $request->tentang;
+        $tambah->katagori = $request->katagori;
+        $tambah->masalah = $request->masalah;
+        $tambah->bidang = $request->bidang;
+
+        $tambah->save();
+
+            return redirect('/kontributor');
+      }
+      
+    }
+    public function hapuskontributor(Request $request, $id)
+    {
+        Produk::destroy($id);
+            return redirect('/kontributor');
     }
     
 }

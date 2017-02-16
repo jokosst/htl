@@ -18,6 +18,10 @@ class SubmenuController extends Controller
       $d = Submenu::all();
       return view('admin/tambah_produk',['data' =>$d]);
     }
+    public function submenukontributor(){
+      $d = Submenu::all();
+      return view('kontributor/tambah_produk',['data' =>$d]);
+    }
    
     public function create(Request $request){
    

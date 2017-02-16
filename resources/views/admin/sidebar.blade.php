@@ -53,7 +53,7 @@
           </a>
         </li>
          <li>
-          <a href="{{URL::to('/admin/keluar')}}">
+          <a href="{{URL::to('/keluar')}}">
             <i class="fa fa-sign-out"></i> <span>Logout</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>

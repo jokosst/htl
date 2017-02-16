@@ -1,7 +1,7 @@
-@include('admin.header')
+@include('kontributor.header')
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
-     @include('admin.sidebar')
+     @include('kontributor.sidebar')
     <!-- /.sidebar -->
   </aside>
 
@@ -26,7 +26,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{URL::to('admin/update')}}/{{$data->id}}" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{URL::to('kontributor/update')}}/{{$data->id}}" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
                 
@@ -92,4 +92,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('admin.footer')
+  @include('kontributor.footer')

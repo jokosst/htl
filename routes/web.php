@@ -8,7 +8,9 @@ Route::get('login', function () {
 	});
 Route::post('/masuk','logincontroller@login');
 Route::get('/lihat/{id}','ProdukController@lihatproduk');
+//download
 Route::get('/download/{dokumen}','ProdukController@downloadproduk');
+
 Route::get('/kontak','KontakController@userkontak');
 Route::post('/cari','ProdukController@cari');
 Route::get('/sortir','ProdukController@sortir');
@@ -20,7 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('home', function () {
 	    return view('home');
 	});
-Route::get('/admin/keluar','logincontroller@logout');
+Route::get('/keluar','logincontroller@logout');
 
 //middleware admin
 Route::group(['middleware' => 'admin'], function() {
@@ -72,9 +74,13 @@ Route::group(['middleware' => 'admin'], function() {
 //middleware kontributor
 Route::group(['middleware' => 'kontributor'], function() {
 
-			Route::get('kontributor', function () {
-				    return "halaman kontrib";
-				});
+			Route::get('/kontributor','ProdukController@kontributor');
+			Route::get('/kontributor/tambah','SubmenuController@submenukontributor');
+			Route::post('/kontributor/createkontributor','ProdukController@tambahproduk');
+			Route::get('/kontributor/lihat/{id}','ProdukController@viewkontributor');
+			Route::get('/kontributor/edit/{id}','ProdukController@editkontributor');
+			Route::post('/kontributor/update/{id}','ProdukController@updatekontributor');
+			Route::get('/kontributor/hapus/{id}','ProdukController@hapuskontributor');
 });
 
 });

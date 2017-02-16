@@ -5,9 +5,28 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
+        
+        @if(Auth::user()->sebagai == 'kontributor')
+        <li class="treeview">
+          <a href="{{URL::to('/kontributor')}}">
+            <i class="fa fa-home"></i> <span>Lihat Produk Hukum</span>            
+          </a>
+        </li>
+        <li>
+          <a href="{{URL::to('/kontributor/tambah')}}">
+            <i class="fa fa-files-o"></i>
+            <span>Tambah Prodak Hukum</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right"></span>
+            </span>
+          </a>
+        </li>
+        @endif
+
+        @if(Auth::user()->sebagai == 'admin')
         <li class="treeview">
           <a href="{{URL::to('/admin')}}">
-            <i class="fa fa-home"></i> <span>Beranda</span>
+            <i class="fa fa-home"></i> <span>Lihat Produk Hukum</span>
             
           </a>
         </li>
@@ -20,6 +39,7 @@
             </span>
           </a>
         </li>
+        
         <li>
           <a href="{{URL::to('/admin/menu')}}">
             <i class="fa fa-bars"></i> <span>Menu</span>
@@ -28,7 +48,7 @@
             </span>
           </a>
         </li>
-         <li>
+        <li>
           <a href="{{URL::to('/admin/submenu')}}">
             <i class="fa  fa-list-ul"></i> <span>Sub Menu</span>
             <span class="pull-right-container">
@@ -52,8 +72,9 @@
             </span>
           </a>
         </li>
+        @endif
          <li>
-          <a href="{{URL::to('/admin/keluar')}}">
+          <a href="{{URL::to('/keluar')}}">
             <i class="fa fa-sign-out"></i> <span>Logout</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>

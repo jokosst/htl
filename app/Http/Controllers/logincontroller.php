@@ -10,7 +10,7 @@ class logincontroller extends Controller
 
    	  if (\Auth::attempt(['username' => $Request->username, 'password' => $Request->password])) {
             // Authentication passed...
-            return redirect()->intended('/admin');
+            return redirect()->intended('/home');
         } else {
         	return back()->with('error', 'Cek Lagi username atau password anda');
         }
