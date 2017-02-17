@@ -15,9 +15,9 @@ class AdminController extends Controller
       return view('admin/user',['data' =>$d]);
     }
     public function create(Request $request){
-   
+   $sebagai = 'kontributor';
         $tambah = new admin; //tambah data dengan eloquent
-        $tambah->sebagai = $request->sebagai;
+        $tambah->sebagai = $sebagai;
         $tambah->username = $request->username;
          $tambah->password = bcrypt($request->password);
         $tambah->save();

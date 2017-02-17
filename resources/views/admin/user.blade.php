@@ -28,7 +28,6 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                <th>SEBAGAI</th>
                   <th>USERNAME</th>
                   <th>AKSI</th>
                 </tr>
@@ -36,7 +35,6 @@
                 <tbody>
                 @foreach($data as $dview)
                 <tr>
-                <td>{{ $dview-> sebagai}}</td>
                 <td>{{ $dview-> username}}</td>
                   <td class="center">
                   <a href="edituser/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;

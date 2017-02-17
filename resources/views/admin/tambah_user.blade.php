@@ -31,10 +31,6 @@
               <div class="box-body">
                 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Sebagai</label>
-                  <input type="text" name="sebagai" class="form-control">
-                </div>
-                <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
                   <input type="text" name="username" class="form-control">
                 </div>
