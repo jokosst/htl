@@ -28,6 +28,11 @@
 <!-- page script -->
 <!-- Select2 -->
 <script src="{{ asset('assets/plugins/select2/select2.full.min.js')}}"></script>
+<!-- Scan -->
+<!-- <script type="text/javascript" src="{{ asset('js/scan_doc.js') }}"></script>
+  <script type="text/javascript" src="{{asset('js/nm_uploadgambar.js')}}"></script>
+  <script type="text/javascript" src="{{asset('assets/plugins/edit_scan_surat/sorting.js')}}"></script> -->
+
 <script>
   $(function () {
     //Initialize Select2 Elements
@@ -46,6 +51,10 @@
       "autoWidth": false
     });
   });
+
+  // function show_edit_menu(image) {
+  //     $(image).addClass('overlay_menu');
+  //   }
 </script>
 </body>
 </html>

@@ -98,7 +98,8 @@ public function downloadproduk(Request $request,$dokumen)
        $extension = $file->getClientOriginalExtension();
         $filename   = md5(time().rand()).".".$file->getClientOriginalExtension();
          Storage::disk('local')->put($filename,  File::get($file));
-
+         $iduser = Auth::user()->id; 
+        
         $tambah = new Produk; //tambah data dengan eloquent
         $tambah->tahun = $request->tahun;
         $tambah->nomor = $request->nomor;
@@ -107,6 +108,7 @@ public function downloadproduk(Request $request,$dokumen)
         $tambah->masalah = $request->masalah;
         $tambah->bidang = $request->bidang;
         $tambah->dokumen = $filename;
+        $tambah->admin_id = $iduser;
         $tambah->save();
 
             return redirect('/admin');

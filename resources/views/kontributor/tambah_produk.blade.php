@@ -74,6 +74,32 @@
                   <label for="exampleInputFile">File Produk</label>
                   <input type="file" name="dokumen">
                 </div>
+
+<!-- <div class="row">
+        <div class="form-group">
+        <div class="col-md-2">
+          <button class="btn btn-warning" id="scan">Scan</button>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox" checked="" value="1" name="download"> Bisa Download
+        </div>
+      </div>
+
+      <div class="form-group">
+      <?php // $link = "http://localhost/cmdtwain/scanned_doc/";?>
+
+    <div id="image_load">
+      <input type="hidden" name="urutan" id="urutan_gambar" value="">
+      <input type="hidden" name="data_scan" id="data_scan" value="">
+      <ul id="sortable_image_item">
+      </ul>
+    </div>
+    <br>
+    <output id="list"></output>
+      </div>
+      </div> -->
+ 
+
               </div>
               <!-- /.box-body -->
 

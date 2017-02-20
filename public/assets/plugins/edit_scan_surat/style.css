@@ -1,0 +1,56 @@
+.overlay_menu{
+	background-color: black;
+	opacity: 0.5;
+}
+
+#image_nav{
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	width: calc(100% - 100px);
+	height: calc(100% - 200px);
+
+	position: fixed;
+	background-color: black;
+	padding: 100px 0px 100px 100px;
+	overflow: scroll;
+}
+
+.image_nav_item{
+	width: 100px;
+}
+
+.image_show_item{
+	width: calc(90%);
+}
+
+.image_show{
+	width: 150px;
+}
+
+.image_nav_inactive{
+	display: none;
+}
+
+#sortable_image_item{
+	list-style: none;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+#sortable_image_item li{
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+
+.delete_image{
+	cursor: pointer;
+}
+
+.delete_image:hover{
+	color: blue;
+}
