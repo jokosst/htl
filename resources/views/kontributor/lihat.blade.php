@@ -78,7 +78,7 @@
               <label>Dokumen</label>
               </div>
               <div class="col-xs-9">
-              <p>: &nbsp;&nbsp;<a href="#"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a></p>
+              <p>: &nbsp;&nbsp;<a href="{{URL::to('download')}}/{{ $data-> dokumen}}"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a></p>
               </div>                  
             </div>
             </div>

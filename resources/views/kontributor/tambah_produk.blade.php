@@ -77,8 +77,14 @@
                   <input type="text" name="bidang" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File Produk</label>
-                  <input type="file" name="dokumen">
+                 <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn bg-purple">
+                        <i class="fa fa-folder-o"></i> Browse&hellip; <input type="file" name="dokumen" style="display: none;" multiple>
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
                 </div>
 
 <!-- <div class="row">
