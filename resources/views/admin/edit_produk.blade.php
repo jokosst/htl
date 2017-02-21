@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal</label>
-                  <input type="text" name="nomor" value="{{$data->tgl}}" class="form-control">
+                  <input type="date" name="tgl" value="{{$data->tgl}}" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
