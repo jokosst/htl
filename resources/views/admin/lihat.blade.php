@@ -38,7 +38,7 @@
               <label>Tanggal</label>
               </div>
               <div class="col-xs-9">
-              <p>: &nbsp;&nbsp;{{$data->tgl}}</p>
+              <p>: &nbsp;&nbsp;{{$data->tgl->format('d-M-Y')}}</p>
               </div>                  
             </div>
             <div class="form-group">            
