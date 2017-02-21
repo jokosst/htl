@@ -23,7 +23,9 @@
        <!-- Select2 -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/select2/select2.min.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/dist/css/skins/_all-skins.min.css')}}">
-
+ <!-- bootstrap datepicker -->
+<link rel="stylesheet" href="{{ asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/datepicker/datepicker3.css')}}">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

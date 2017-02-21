@@ -28,6 +28,10 @@
 <!-- page script -->
 <!-- Select2 -->
 <script src="{{ asset('assets/plugins/select2/select2.full.min.js')}}"></script>
+
+<script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- bootstrap datepicker -->
+<script src="{{ asset('assets/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements
@@ -74,6 +78,13 @@
   });
   
 });
+  
+  $(document).ready(function () {
+                $('#tanggal').datepicker({
+                    format: "yyyy-mm-dd",
+                    autoclose:true
+                });
+            });
 </script>
 
 </body>

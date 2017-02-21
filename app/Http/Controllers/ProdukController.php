@@ -235,6 +235,7 @@ public function downloadproduk(Request $request,$dokumen)
       }else{
         $tambah = Produk::find($id);
         $tambah->tahun = $request->tahun;
+        $tambah->tgl = $request->tgl;
         $tambah->nomor = $request->nomor;
         $tambah->tentang = $request->tentang;
         $tambah->katagori = $request->katagori;

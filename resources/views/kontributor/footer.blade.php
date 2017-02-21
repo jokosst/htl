@@ -32,7 +32,9 @@
 <!-- <script type="text/javascript" src="{{ asset('js/scan_doc.js') }}"></script>
   <script type="text/javascript" src="{{asset('js/nm_uploadgambar.js')}}"></script>
   <script type="text/javascript" src="{{asset('assets/plugins/edit_scan_surat/sorting.js')}}"></script> -->
-
+<script src="{{ asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<!-- bootstrap datepicker -->
+<script src="{{ asset('assets/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
 <script>
   $(function () {
     //Initialize Select2 Elements
@@ -83,6 +85,12 @@
   });
   
 });
+  $(document).ready(function () {
+                $('#tanggal').datepicker({
+                    format: "yyyy-mm-dd",
+                    autoclose:true
+                });
+            });
 </script>
 </body>
 </html>

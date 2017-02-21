@@ -35,12 +35,18 @@
                   <input type="text" name="nomor" value="{{$data->nomor}}" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Tanggal</label>
-                  <input type="date" name="tgl" value="{{$data->tgl}}" class="form-control">
+                  <label for="tanggal">Tanggal</label>
+                  <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+  <input type="text" name="tgl" value="{{$data->tgl->format('Y-m-d')}}" id="tanggal"class="form-control">
+                </div>
+                  <!-- <input type="text" name="tgl" class="tanggal" value="{{$data->tgl}}"> -->
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
-                  <input type="text" name="tentang" value="{{$data->tentang}}" class="form-control">
+           <input type="text" name="tentang" value="{{$data->tentang}}" class="form-control">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">Katagori</label>

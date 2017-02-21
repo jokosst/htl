@@ -36,7 +36,12 @@
                 </div>
                  <div class="form-group">
                   <label for="exampleInputEmail1">Tanggal</label>
-                  <input type="date" name="tgl" value="{{$data->tgl}}" class="form-control" required="tgl">
+                  <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+  <input type="text" name="tgl" value="{{$data->tgl->format('Y-m-d')}}" id="tanggal"class="form-control">
+                </div>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
