@@ -35,6 +35,10 @@
                   <input type="text" name="nomor" value="{{$data->nomor}}" class="form-control">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Tanggal</label>
+                  <input type="text" name="nomor" value="{{$data->tgl}}" class="form-control">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
                   <input type="text" name="tentang" value="{{$data->tentang}}" class="form-control">
                 </div>
@@ -60,6 +64,8 @@
                   <option value="2016">2016</option>
                   <option value="2017">2017</option>
                   <option value="2018">2018</option>
+                   <option value="2019">2019</option>
+                  <option value="2020">2020</option>
                 </select>
                 </div>
                  <div class="form-group">

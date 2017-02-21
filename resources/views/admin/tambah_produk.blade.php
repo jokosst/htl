@@ -32,11 +32,15 @@
                 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nomor</label>
-                  <input type="text" name="nomor" class="form-control">
+                  <input type="text" name="nomor" class="form-control" required="nomor">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Tanggal</label>
+                  <input type="date" name="tgl" class="form-control" required="tgl">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Tentang</label>
-                  <input type="text" name="tentang" class="form-control">
+                  <input type="text" name="tentang" class="form-control" required="tentang">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">Kategori</label>
@@ -60,15 +64,17 @@
                   <option value="2016">2016</option>
                   <option value="2017">2017</option>
                   <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
                 </select>
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">Perihal</label>
-                  <input type="text" name="masalah" class="form-control">
+                  <input type="text" name="masalah" class="form-control" required="masalah">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputPassword1">Bidang</label>
-                  <input type="text" name="bidang" class="form-control">
+                  <input type="text" name="bidang" class="form-control" required="bidang">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File Produk</label>

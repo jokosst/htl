@@ -20,6 +20,14 @@
             </div>
             <div class="form-group">            
               <div class="col-xs-3">
+              <label>Tanggal</label>
+              </div>
+              <div class="col-xs-9">
+              <p>: &nbsp;&nbsp;{{$data->tgl = date('d-M-Y')}}</p>
+              </div>                  
+            </div>
+            <div class="form-group">            
+              <div class="col-xs-3">
               <label>Tentang</label>
               </div>
               <div class="col-xs-9">
@@ -58,12 +66,13 @@
               <p>: &nbsp;&nbsp;<a href="{{URL::to('download')}}/{{ $data-> dokumen}}"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a></p>
               </div>                  
             </div>
+             </div>
+              <!-- /.box-body -->
             <div class="box-footer">
                 <a href="{{URL::to('/')}}"class="btn btn-primary"><i class="fa fa-angle-double-left"></i> Kembali</a>
               </div>
                 
-              </div>
-              <!-- /.box-body -->
+             
                   </div>
                 </section>
                 </div>
