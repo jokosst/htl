@@ -43,7 +43,7 @@
                   <td>{{ $dview-> katagori}}</td>
                   <td>{{ $dview-> masalah}}</td>
                   <td class="center">
-                  &nbsp;&nbsp;&nbsp;<a href="admin/lihat/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>&nbsp;&nbsp;&nbsp;
+                  &nbsp;<a href="admin/lihat/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>&nbsp;&nbsp;&nbsp;
                   <a href="download/{{ $dview-> dokumen}}"data-toggle="tooltip" data-placement="top" title="Download"><i class="fa fa-download"></i></a>&nbsp;&nbsp;&nbsp;
                   <a href="admin/edit/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
                   <a href="admin/hapus/{{ $dview-> id}}"onclick="return confirmSubmit()"data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
