@@ -9,8 +9,14 @@ class admin extends Model
    protected $table = 'admin';
    protected $guarded = [''];
    public $timestamps = false;
+   
 
    protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function verifikator()
+    {
+        return $this->hasMany(verifikator::class);
+    }
 }

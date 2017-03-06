@@ -10,9 +10,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Semua Admin</small>
+        <small>Semua Kontributor</small>
       </h1>
-      <a href="{{URL::to('/admin/tambahuser')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Admin</a>
+      <a href="{{URL::to('/admin/tambahkontributor')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Kontributor</a>
     </section>
 
     <!-- Main content -->
@@ -37,8 +37,8 @@
                 <tr>
                 <td>{{ $dview-> username}}</td>
                   <td class="center">
-                  <a href="edituser/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="hapususer/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="editkontributor/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
+                  <a href="hapuskontributor/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
                 @endforeach
                 

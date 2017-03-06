@@ -10,7 +10,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Tambah Admin</small>
+        <small>Edit Verifikator</small>
       </h1>
       
     </section>
@@ -26,13 +26,17 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="createuser" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="{{URL::to('admin/updateverifikator')}}/{{$data->id}}" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
                 
                 <div class="form-group">
+                  <label for="exampleInputEmail1">Sebagai</label>
+                  <input type="text" name="sebagai" value="{{ $data-> sebagai}}" class="form-control" disabled>
+                </div>
+                <div class="form-group">
                   <label for="exampleInputEmail1">Username</label>
-                  <input type="text" name="username" class="form-control">
+                  <input type="text" name="username" value="{{ $data-> username}}" class="form-control">
                 </div>
                  <div class="form-group">
                   <label for="exampleInputEmail1">Password</label>

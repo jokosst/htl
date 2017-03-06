@@ -38,8 +38,8 @@ class ProdukController extends Controller
     }
      public function sortir(){
       $d = Produk::all();
-      $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get(); //query bulider ngelihat data dari katagori
-      return view('sortir',['data' =>$d,'dataprodukhukum'=>$dataprodukhukum]);
+    //  $dataprodukhukum = DB::table('produk_hukum')->select('katagori')->groupby('katagori')->get(); //query bulider ngelihat data dari katagori
+      return view('sortir',['data' =>$d]);
     }
      public function katagori(Request $request,$katagori){
         $d = DB::table('produk_hukum')->where('katagori',$katagori)->get();

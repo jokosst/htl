@@ -31,6 +31,9 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/admin/submenu','SubmenuController@submenu');
 	Route::get('/admin','ProdukController@admin');
 	Route::get('/admin/user','AdminController@user');
+	Route::get('/admin/kontributor','AdminController@kontributor');
+	Route::get('/admin/verifikator','AdminController@verifikator');
+	Route::get('/admin/aksesverifikator','AdminController@aksesverifikator');
 	//tambah
 	Route::get('/admin/tambah','SubmenuController@submenuindex');
 	Route::get('/admin/tambahmenu', function () {
@@ -39,32 +42,52 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/admin/tambahuser', function () {
 	    return view('admin/tambah_user');
 	});
+	Route::get('/admin/tambahverifikator', function () {
+	    return view('admin/tambah_verifikator');
+	});
+	Route::get('/admin/tambahkontributor', function () {
+	    return view('admin/tambah_kontributor');
+	});
+	Route::get('/admin/tambahaksesverifikator','AdminController@tambahaksesverifikator');
 	Route::get('/admin/tambahsubmenu','MenuController@tambahsubmenu');
+	
 	Route::post('/admin/create','ProdukController@tambah');
 	Route::post('/admin/createmenu','MenuController@create');
 	Route::post('/admin/createsubmenu','SubmenuController@create');
 	Route::post('/admin/createuser','AdminController@create');
+	Route::post('/admin/createverifikator','AdminController@createverifikator');
+	Route::post('/admin/createkontributor','AdminController@createkontributor');
+Route::post('/admin/createaksesverifikator/{id}','VeriController@createaksesverifi');
 
 //lihat
 	Route::get('/admin/lihat/{id}','ProdukController@view');
+	Route::get('/admin/lihataksesverifikator/{id}','VeriController@view');
 
 	//edit
 	Route::get('/admin/edit/{id}','ProdukController@edit');
 	Route::get('/admin/editmenu/{id}','MenuController@edit');
 	Route::get('/admin/editsubmenu/{id}','SubmenuController@edit');
 	Route::get('/admin/edituser/{id}','AdminController@edit');
+	Route::get('/admin/editverifikator/{id}','AdminController@editverifikator');
+	Route::get('/admin/editkontributor/{id}','AdminController@editkontributor');
+	Route::get('/admin/editaksesverifikator/{id}','VeriController@edit');
 
 //update
 	Route::post('/admin/update/{id}','ProdukController@update');
 	Route::post('/admin/updatemenu/{id}','MenuController@update');
 	Route::post('/admin/updatesubmenu/{id}','SubmenuController@update');
 	Route::post('/admin/updateuser/{id}','AdminController@update');
+	Route::post('/admin/updateverifikator/{id}','AdminController@updateverifikator');
+	Route::post('/admin/updatekontributor/{id}','AdminController@updatekontributor');
 	
 	//hapus
 	Route::get('/admin/hapus/{id}','ProdukController@hapus');
 	Route::get('/admin/hapusmenu/{id}','MenuController@hapus');
 	Route::get('/admin/hapussubmenu/{id}','SubmenuController@hapus');
 	Route::get('/admin/hapususer/{id}','AdminController@hapus');
+	Route::get('/admin/hapusverifikator/{id}','AdminController@hapusverifikator');
+	Route::get('/admin/hapuskontributor/{id}','AdminController@hapuskontributor');
+	Route::get('/admin/hapusaksesverifikator/{id}','VeriController@hapusaksesverifi');
 
 	
 	Route::get('/admin/kontak','KontakController@kontak');

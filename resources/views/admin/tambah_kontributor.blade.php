@@ -10,7 +10,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Tambah Admin</small>
+        <small>Tambah Kontributor</small>
       </h1>
       
     </section>
@@ -26,7 +26,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="createuser" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="createkontributor" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
                 

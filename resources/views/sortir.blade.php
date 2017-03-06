@@ -5,46 +5,17 @@
     <!-- /.sidebar -->
   </aside>
 <script type="text/javascript">
-    function cari(){
-      var strcari = $("#txtcari").val();
-      var strkatagori = $("#txtkatagori").val(); 
-      $('#hasil').empty();
-
+    ffunction cari(){
+      strcari = $("#txtcari").val();
+      strmasalah = $("#txtmasalah").val();
+      
       if(strcari !=""){
         $("#hasil").html()
         $.ajax({
-          type:"post",
+          type:"get",
           url:"{{URL::to('cari')}}",
-          data:{"_token": "{{ csrf_token() }}",'strcari': strcari,'strkatagori':strkatagori},
-          success: function(data){    
-          // #("#hasil").html(data.hasil)      
-
-            console.log(strkatagori);
-            $.each(data['hasil'], function(k, v) {
-                // For each record in the returned array
-                // alert(v.bidang); 
-                $('#hasil').append(
-                    "<tr>"
-                      +"<td>"+v.nomor+"</td>"
-                      +"<td>"+v.tentang+"</td>"
-                      +"<td>"+v.katagori+"</td>"
-                      +"<td>"+v.masalah+"</td>"
-                      +"<td>"
-                      +"<a href='lihat/" + v.id + "'>"
-                      +"<i class='fa fa-share-square-o'>"
-                      +"</i>"
-                      +"</a>" +"&nbsp;&nbsp;&nbsp;"
-                      +"<a href='download/" + v.dokumen + "'>"
-                      +"<i class='fa fa-download'>"
-                      +"</i>"
-                      +"</a>"
-                      +"</td>"
-                    +"</tr>" );
-                
-            });
-
-            
-
+          data:{'strcari': strcari,'strkatagori':strkatagori},
+          success: function(data){
           }
         });
       }

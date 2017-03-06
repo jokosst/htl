@@ -36,13 +36,30 @@
             </span>
           </a>
         </li>
-        <li>
-          <a href="{{URL::to('/admin/user')}}">
+        <li class="treeview">
+          <a href="#">
             <i class="fa  fa-user"></i> <span>User</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>
             </span>
           </a>
+          <ul class="treeview-menu">
+     <li><a href="{{URL::to('/admin/user')}}"><i class="fa fa-circle-o"></i> Admin</a></li>
+    <li><a href="{{URL::to('/admin/verifikator')}}"><i class="fa fa-circle-o"></i> Verifikator</a></li>
+<li><a href="{{URL::to('/admin/kontributor')}}"><i class="fa fa-circle-o"></i> Kontributor</a></li>
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-gear"></i> <span>Hak Akses</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"></small>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+    <li><a href="{{URL::to('/admin/aksesverifikator')}}"><i class="fa fa-circle-o"></i> Verifikator</a></li>
+<li><a href="#"><i class="fa fa-circle-o"></i> Kontributor</a></li>
+          </ul>
         </li>
         <li>
           <a href="{{URL::to('/admin/kontak')}}">

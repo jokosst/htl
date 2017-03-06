@@ -10,7 +10,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Tambah Admin</small>
+        <small>Tambah Akses Verifikator</small>
       </h1>
       
     </section>
@@ -26,18 +26,28 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="createuser" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="createaksesverifikator" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
-                
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Username</label>
-                  <input type="text" name="username" class="form-control">
-                </div>
                  <div class="form-group">
-                  <label for="exampleInputEmail1">Password</label>
-                  <input type="text" name="password" class="form-control">
+                  <label for="exampleInputEmail1">Verifikator</label>
+       <select name="admin_id_veri" class="form-control select2" style="width: 100%;">
+                  <option value="Belum Pilih" selected="selected">-Pilih-</option>
+                   @foreach($dv as $dview)
+                  <option value="{{ $dview-> id}}">{{ $dview-> username}}</option>
+                  @endforeach
+                </select>
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Kontributor</label>
+                   <select name="admin_id_kontri" class="form-control select2" style="width: 100%;">
+                  <option value="Belum Pilih" selected="selected">-Pilih-</option>
+                   @foreach($dk as $dkview)
+                  <option value="{{ $dkview-> id}}">{{ $dkview-> username}}</option>
+                  @endforeach
+                </select>
+                </div>
+               
                 
               </div>
               <!-- /.box-body -->

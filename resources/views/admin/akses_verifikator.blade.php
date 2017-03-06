@@ -10,9 +10,9 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Semua Admin</small>
+        <small>Semua Akses Verifikator</small>
       </h1>
-      <a href="{{URL::to('/admin/tambahuser')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Admin</a>
+      
     </section>
 
     <!-- Main content -->
@@ -28,7 +28,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>USERNAME</th>
+                  <th>VERIFIKATOR</th>
                   <th>AKSI</th>
                 </tr>
                 </thead>
@@ -37,8 +37,8 @@
                 <tr>
                 <td>{{ $dview-> username}}</td>
                   <td class="center">
-                  <a href="edituser/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp;
-                  <a href="hapususer/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="lihataksesverifikator/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>
+                  </td>
                 </tr>
                 @endforeach
                 

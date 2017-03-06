@@ -92,14 +92,12 @@
             </div>
                 </div>
 
-<!-- <div class="row">
+ <!-- <div class="row">
         <div class="form-group">
         <div class="col-md-2">
           <button class="btn btn-warning" id="scan">Scan</button>
         </div>
-        <div class="col-md-4">
-          <input type="checkbox" checked="" value="1" name="download"> Bisa Download
-        </div>
+        
       </div>
 
       <div class="form-group">
@@ -114,7 +112,7 @@
     <br>
     <output id="list"></output>
       </div>
-      </div> -->
+      </div>  -->
  
 
               </div>
@@ -134,5 +132,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <!-- Scan -->
+  
 
   @include('kontributor/footer')
