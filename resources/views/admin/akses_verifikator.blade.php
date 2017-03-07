@@ -12,7 +12,7 @@
       <h1>
         <small>Semua Akses Verifikator</small>
       </h1>
-      
+      <a href="{{URL::to('admin/tambahaksesverifikator')}}" class="btn bg-navy btn-flat margin"><i class="fa fa-plus-circle"></i> Tambah Akses Verifikator</a>
     </section>
 
     <!-- Main content -->
@@ -37,7 +37,7 @@
                 <tr>
                 <td>{{ $dview-> username}}</td>
                   <td class="center">
-                  <a href="lihataksesverifikator/{{ $dview-> id}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>
+                  <a href="lihataksesverifikator/{{ $dview-> admin_id_veri}}" data-toggle="tooltip" data-placement="top" title="Lihat"><i class="fa fa-share-square-o"></i></a>
                   </td>
                 </tr>
                 @endforeach

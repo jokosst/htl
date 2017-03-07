@@ -33,7 +33,7 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/admin/user','AdminController@user');
 	Route::get('/admin/kontributor','AdminController@kontributor');
 	Route::get('/admin/verifikator','AdminController@verifikator');
-	Route::get('/admin/aksesverifikator','AdminController@aksesverifikator');
+	Route::get('/admin/aksesverifikator','VeriController@aksesverifikator');
 	//tambah
 	Route::get('/admin/tambah','SubmenuController@submenuindex');
 	Route::get('/admin/tambahmenu', function () {
@@ -57,6 +57,7 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::post('/admin/createuser','AdminController@create');
 	Route::post('/admin/createverifikator','AdminController@createverifikator');
 	Route::post('/admin/createkontributor','AdminController@createkontributor');
+	Route::post('/admin/createaksesverifi','VeriController@createaksesverifi2');
 Route::post('/admin/createaksesverifikator/{id}','VeriController@createaksesverifi');
 
 //lihat

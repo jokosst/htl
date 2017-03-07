@@ -26,7 +26,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="createaksesverifikator" name="save" method="post" enctype="multipart/form-data">
+            <form role="form" action="createaksesverifi" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
               <div class="box-body">
                  <div class="form-group">
@@ -39,11 +39,11 @@
                 </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Kontributor</label>
-                   <select name="admin_id_kontri" class="form-control select2" style="width: 100%;">
+                  <label for="exampleInputEmail1">Kategori</label>
+                   <select name="id_kategori" class="form-control select2" style="width: 100%;">
                   <option value="Belum Pilih" selected="selected">-Pilih-</option>
                    @foreach($dk as $dkview)
-                  <option value="{{ $dkview-> id}}">{{ $dkview-> username}}</option>
+                  <option value="{{ $dkview-> id}}">{{ $dkview-> nama_submenu}}</option>
                   @endforeach
                 </select>
                 </div>

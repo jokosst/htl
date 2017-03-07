@@ -11,6 +11,24 @@ use App\Submenu;
 
 class VeriController extends Controller
 {
+  public function aksesverifikator(){
+    $d = DB::table('tbl_verifi')
+            ->join('admin','admin.id','=','tbl_verifi.admin_id_veri')
+            ->select('tbl_verifi.admin_id_veri','admin.username')
+            ->groupby('tbl_verifi.admin_id_veri','admin.username')
+            ->get(); 
+      return view('admin/akses_verifikator',['data' =>$d]);
+  }
+  public function createaksesverifi2(Request $request){
+     
+        $tambah = new verifikator; //tambah data dengan eloquent
+        $tambah->admin_id_veri = $request->admin_id_veri;
+        $tambah->id_kategori = $request->id_kategori;
+        $tambah->save();
+
+            return redirect('admin/aksesverifikator');
+
+    }
     public function createaksesverifi(Request $request,$id){
       $veri = admin::find($id);
       $id_veri = $veri->id;
@@ -77,6 +95,6 @@ class VeriController extends Controller
     public function hapusaksesverifi(Request $request, $id)
     {
       verifikator::destroy($id);
-      return back();
+      return redirect('/admin/aksesverifikator');
     }
 }

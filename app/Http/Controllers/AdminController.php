@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 use App\admin;
+use App\verifikator;
+use App\Submenu;
 
 
 class AdminController extends Controller
@@ -32,9 +34,8 @@ class AdminController extends Controller
     }
     public function tambahaksesverifikator(){
          $verifikator = 'verifikator';
-          $kontributor = 'kontributor';
       $v = admin::where('sebagai', $verifikator)->get();
-      $k = admin::where('sebagai', $kontributor)->get();
+      $k = Submenu::all();
       return view('admin/tambah_aksesverifi',['dv' =>$v,'dk' =>$k]);
     }
     public function create(Request $request){
