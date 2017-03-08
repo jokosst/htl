@@ -96,5 +96,6 @@ class VeriController extends Controller
     {
       verifikator::destroy($id);
       return redirect('/admin/aksesverifikator');
+      
     }
 }

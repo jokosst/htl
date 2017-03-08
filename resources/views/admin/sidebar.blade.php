@@ -58,7 +58,7 @@
           </a>
           <ul class="treeview-menu">
     <li><a href="{{URL::to('/admin/aksesverifikator')}}"><i class="fa fa-circle-o"></i> Verifikator</a></li>
-<li><a href="#"><i class="fa fa-circle-o"></i> Kontributor</a></li>
+<li><a href="{{URL::to('/admin/akseskontributor')}}"><i class="fa fa-circle-o"></i> Kontributor</a></li>
           </ul>
         </li>
         <li>

@@ -38,6 +38,12 @@ class AdminController extends Controller
       $k = Submenu::all();
       return view('admin/tambah_aksesverifi',['dv' =>$v,'dk' =>$k]);
     }
+    public function tambahakseskontributor(){
+         $kontributor = 'kontributor';
+      $v = admin::where('sebagai', $kontributor)->get();
+      $k = Submenu::all();
+      return view('admin/tambah_akseskontri',['dv' =>$v,'dk' =>$k]);
+    }
     public function create(Request $request){
    $sebagai = 'admin';
         $tambah = new admin; //tambah data dengan eloquent

@@ -10,13 +10,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        <small>Tambah Akses Verifikasi</small>
+        <small>Tambah Kontributor</small>
       </h1>
       
             
              <table>
                 <tr>
-                <form role="form" action="{{URL::to('admin/createaksesverifikator')}}/{{ $datav->id}}" name="save" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{URL::to('admin/createakseskontri2')}}/{{ $datav->id}}" name="save" method="post" enctype="multipart/form-data">
              {{ csrf_field() }}
 
              <td>         
@@ -64,7 +64,7 @@
                 <td>{{ $dview->nama_submenu}}</td>
                   <td class="center">
                   <!-- <a href="{{URL::to('/admin/editaksesverifikator')}}/{{ $dview-> id}}"data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;&nbsp; -->
-                  <a href="{{URL::to('/admin/hapusaksesverifikator')}}/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
+                  <a href="{{URL::to('/admin/hapusakseskontributor')}}/{{ $dview-> id}}" onclick="return confirmSubmit()" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-times-circle"></i></a></td>
                 </tr>
                 @endforeach
                 

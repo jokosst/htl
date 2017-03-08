@@ -34,6 +34,8 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::get('/admin/kontributor','AdminController@kontributor');
 	Route::get('/admin/verifikator','AdminController@verifikator');
 	Route::get('/admin/aksesverifikator','VeriController@aksesverifikator');
+	Route::get('/admin/akseskontributor','KontriController@akseskontributor');
+	
 	//tambah
 	Route::get('/admin/tambah','SubmenuController@submenuindex');
 	Route::get('/admin/tambahmenu', function () {
@@ -50,6 +52,7 @@ Route::group(['middleware' => 'admin'], function() {
 	});
 	Route::get('/admin/tambahaksesverifikator','AdminController@tambahaksesverifikator');
 	Route::get('/admin/tambahsubmenu','MenuController@tambahsubmenu');
+	Route::get('/admin/tambahakseskontributor','AdminController@tambahakseskontributor');
 	
 	Route::post('/admin/create','ProdukController@tambah');
 	Route::post('/admin/createmenu','MenuController@create');
@@ -59,10 +62,13 @@ Route::group(['middleware' => 'admin'], function() {
 	Route::post('/admin/createkontributor','AdminController@createkontributor');
 	Route::post('/admin/createaksesverifi','VeriController@createaksesverifi2');
 Route::post('/admin/createaksesverifikator/{id}','VeriController@createaksesverifi');
+Route::post('/admin/createakseskontri','KontriController@createakseskontri');
+Route::post('/admin/createakseskontri2/{id}','KontriController@createakseskontri2');
 
 //lihat
 	Route::get('/admin/lihat/{id}','ProdukController@view');
 	Route::get('/admin/lihataksesverifikator/{id}','VeriController@view');
+	Route::get('/admin/lihatakseskontri/{id}','KontriController@view');
 
 	//edit
 	Route::get('/admin/edit/{id}','ProdukController@edit');
@@ -89,6 +95,7 @@ Route::post('/admin/createaksesverifikator/{id}','VeriController@createaksesveri
 	Route::get('/admin/hapusverifikator/{id}','AdminController@hapusverifikator');
 	Route::get('/admin/hapuskontributor/{id}','AdminController@hapuskontributor');
 	Route::get('/admin/hapusaksesverifikator/{id}','VeriController@hapusaksesverifi');
+	Route::get('/admin/hapusakseskontributor/{id}','KontriController@hapusakseskontri');
 
 	
 	Route::get('/admin/kontak','KontakController@kontak');
